@@ -1,16 +1,16 @@
 import React, {useContext} from 'react';
 import StateContext from '../StateContext';
-import { makeStyles } from '@material-ui/core/styles';
+//import { makeStyles } from '@material-ui/core/styles';
 import Transaction from './Transaction';
 import {Typography} from '@material-ui/core';
 
 
-const useStyles = makeStyles((theme) => ({
-    root: {
+// const useStyles = makeStyles((theme) => ({
+//     root: {
     
-      //backgroundColor: theme.palette.background.paper,
-    },
-  }));
+//       //backgroundColor: theme.palette.background.paper,
+//     },
+//   }));
   
 function IncomeExpenseList(props) {
     //let listStyle;
