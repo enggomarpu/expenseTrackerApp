@@ -34,8 +34,9 @@ jobs:
     - name: install react and dependencies 
       run:  npm install 
     - name: build the project
-      run:  npm run build
-    #   run:  npm run build
+      run:  CI="" npm run build
+      
+   
 
     - name: Install Surge
       run: npm install --global surge
