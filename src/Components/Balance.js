@@ -10,10 +10,11 @@ function Balance(props) {
         .filter(item => item.type === 'inc')
         .reduce((acc, item) => (acc += parseInt(item.value)), 0)
         .toFixed(2): 0.0}
-    {totalExpense = allTransactions.length > 0 ? allTransactions
-        .filter(item => item.type === 'exp')
-        .reduce((acc, item) => (acc += parseInt(item.value)), 0)
-        .toFixed(2): 0.0}
+    // {totalExpense = allTransactions.length > 0 ? allTransactions
+    //     .filter(item => item.type === 'exp')
+    //     .reduce((acc, item) => (acc += parseInt(item.value)), 0)
+    //     .toFixed(2): 0.0}
+
     return (
         <div>
             <Typography style={{margin: '10px 0', textAlign:'center'}} variant="h4">Expense Tracker App</Typography>
