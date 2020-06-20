@@ -51,7 +51,7 @@ const Transaction = ({transac}) => {
                 <ListItemText id="switch-list-label-wifi" primary={transac.description}
                 style={{color: '#000', fontWeight: 'bold'}}/>
               </ListItemIcon>
-              <ListItemText id="switch-list-label-wifi" primary={`${sign} ${transac.value.toFixed(2)} USD`} />
+              <ListItemText id="switch-list-label-wifi" primary={`${sign} ${transac.value} USD`} />
               <ListItemSecondaryAction>
               <IconButton edge="end" aria-label="comments">
                 <DeleteIcon onClick = {()=>{buttonDelClicked(transac.id)}}  />
