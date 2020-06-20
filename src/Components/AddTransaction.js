@@ -1,9 +1,19 @@
 import React, { useContext, useState } from 'react';
 //import ReactDOM from 'react-dom';
+import { makeStyles } from '@material-ui/core/styles';
 import DispatchContext from '../DispatchContext';
 import {Typography, FormControl, InputLabel, MenuItem, TextField, Select, Button} from '@material-ui/core';
 
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+  
+    //backgroundColor: theme.palette.background.paper,
+  },
+  numberField:{
+    marginRight: theme.spacing(0),
+  }
+}));
 
 
 function AddTransaction(props) {
@@ -12,7 +22,7 @@ function AddTransaction(props) {
     const [description, setDescription] = useState('');
     const [amount, setAmount] = useState();
     const  {addTran}  = useContext(DispatchContext);
-   
+    const classes = makeStyles();
     
     // function buttonClicked(){
     //     helloWorld();
@@ -53,8 +63,8 @@ function AddTransaction(props) {
             margin="normal" fullWidth onChange={(e) => setDescription(e.target.value)} 
             autoComplete="off" value={description} />
 
-        <div style={{marginTop: '10px'}}>
-        <FormControl variant="outlined" style={{width: '30%'}}>
+        <div style={{marginTop: '10px', display: 'flex', flexDirection: 'row'}} >
+        <FormControl variant="outlined" style={{width:'30%', marginRight: '5%'}}> 
           <InputLabel id="demo-simple-select-outlined-label">Type</InputLabel>
             <Select labelId="demo-simple-select-outlined-label" id="demo-simple-select-outlined"
               value={butype} label="Type" onChange={(e) => setType(e.target.value)}>
@@ -63,7 +73,7 @@ function AddTransaction(props) {
             </Select>    
         </FormControl>
                     
-      <TextField style={{minWidth:'65%', marginLeft: '5%'}} variant="outlined" 
+      <TextField style={{flex: 1}} className={classes.numberField} variant="outlined" 
             onChange={(e) => setAmount(e.target.value)} name="amount"  label="Enter Amount" 
             autoComplete="off" type="number" value={amount} />
         </div>
